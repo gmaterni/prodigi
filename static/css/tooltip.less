@@ -1,0 +1,97 @@
+
+@tip_back:darken(green,10%);
+@tip_color: darken(#ffffff, 0%);
+@tip_fsize: 18px;
+@tip_fam: arial, verdana, sans-serif;
+
+.tipt,
+.tipb,
+.tipl,
+.tipr {
+  position: relative;
+  display: inline-block;
+  margin: 0 !important;
+}
+
+.tipt:hover .tiptextt,
+.tipb:hover .tiptextb,
+.tipl:hover .tiptextl,
+.tipr:hover .tiptextr {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tipb .tiptextb,
+.tipt .tiptextt,
+.tipl .tiptextl,
+.tipr .tiptextr {
+  visibility: hidden;
+  background: @tip_back;
+  color: @tip_color;
+  font-size: @tip_fsize;
+  font-family: @tip_fam;
+  font-weight: normal;
+  white-space: nowrap;
+  text-align: center;
+  padding: 2px 2px 2px 2px;
+  border-radius: 6px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  position: absolute;
+  z-index: 99;
+}
+
+.tipb .tiptextb::after,
+.tipt .tiptextt::after,
+.tipl .tiptextl::after,
+.tipr .tiptextr::after {
+  content: " ";
+  position: absolute;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: transparent transparent @tip_back transparent;
+}
+//bottom
+.tipb .tiptextb {
+  top: 130%;
+  left: 50%;
+  margin-left: -50%;
+}
+.tipb .tiptextb::after {
+  bottom: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+//top
+.tipt .tiptextt {
+  bottom: 125%;
+  left: 50%;
+  margin-left: -50%;
+}
+.tipt .tiptextt::after {
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+}
+//left
+.tipl .tiptextl {
+  top: -5px;
+  right: 105%;
+}
+.tipl .tiptextl::after {
+  top: 50%;
+  left: 100%;
+  margin-top: -5px;
+}
+//right
+.tipr .tiptextr {
+  top: -1px;
+  left: 105%;
+}
+.tipr .tiptextr::after {
+  top: 0%;
+  right: 100%;
+  margin-top: -5px;
+}
+

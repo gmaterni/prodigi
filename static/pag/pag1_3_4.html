@@ -1,0 +1,207 @@
+<!--
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Encodage TEI-XML</title>
+    <link rel="stylesheet" type="text/css" href="normalize.css"/>
+    <link rel="stylesheet" type="text/css" href="pag.css"/>
+    <script type="text/javascript" src="js/pagutil.js"></script>
+</head>
+<body>
+-->
+<div class="pagx brd1">
+
+
+<div class="tit1">Le manuel d’encodage DigiFlorimont (TEI-XML)</div>
+<div class="version cnt">[version du 08/04/2019]</div>
+
+
+
+<div class="mgb30">
+
+<div class="tit2">1. structure physique du <span class="stli">Document</span></div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5">1.1. Structure Codicologique</div>
+
+<div><span class="cod1">&lt;gb&#47;&gt;</span>  <span class="cod2">@n</span> (“I”, “II” etc.)</div>
+<div><span class="cod1">&lt;pb&#47;&gt;</span>  <span class="cod2">@n</span> (“1r”, “1v” etc.) <span class="cod2">@facs</span></div>
+<div><span class="cod1">&lt;fw&#47;&gt;</span>  <span class="cod2">@type</span> (“catch”&#47;<span class="stli">catchword</span>, “sig”&#47;<span class="stli">signature)</span>  <span class="cod2">@place</span> (“bottom”, “top”)</div>
+</div>
+
+
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5">1.2. Structure de la Page ou Mise en Page</div>
+
+<div><span class="cod1">&lt;cb&#47;&gt;</span>  <span class="cod2">@n</span> (“a”, “b”, “c”)</div>
+<div><span class="cod1">&lt;space&#47;&gt;</span>  <span class="cod2">@type</span> (“reserved-initial”, “reserved-line”)</div>
+<div><span class="cod1">&lt;fw&gt;</span>  <span class="cod2">@type</span> (“guide-letter”)</div>
+</div>
+
+
+
+<div class="mgl30">
+<div class="tit3 mgb5">1.3. État Physique du Document</div>
+
+<div><span class="cod1">&lt;damage&gt;</span>  <span class="cod2">@degree</span> (“low”, “medium”, “high”)</div>
+<div><span class="cod1">&lt;gap&#47;&gt;</span>  <span class="cod2">@reason</span> (“damage”)</div>
+<div><span class="cod1">&lt;unclear&gt;</span> <span class="cod2">@reason</span> (“damage”)</div>
+</div>
+
+<div class="cnt mgt10">
+<a class="ms" href="javascript:open_pag('pag/pag1_3_4_1.html');" >plus de détails</a></div>
+
+</div>
+
+
+
+
+<div class="mgb30">
+<div class="tit2">2. Structure narrative de l’<span class="stli">Oeuvre</span></div>
+
+<div class="mgl30">
+<div><span class="cod1">&lt;div&gt;</span>  <span class="cod2">@type</span> (“prologue”, “episode”, “explicit”)  <span class="cod2">@ref</span> (<span class="stli">renvoi à la description de l’épisode</span>)</div>
+</div>
+
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_2.html');" >plus de détails</a></div>
+
+</div>
+
+
+
+<div class="mgb30">
+<div class="tit2">3. Structure logique du <span class="stli">Texte</span></div>
+
+<div class="mgl30">
+<div><span class="cod1">&lt;lg&gt;</span>  <span class="cod2">@n</span>  <span class="cod2">@xml:id</span></div>
+<div><span class="cod1">&lt;l&gt;</span>  <span class="cod2">@n</span>  <span class="cod2">@xml:id</span></div>
+<div><span class="cod1">&lt;hi&gt;</span>  <span class="cod2">@rend</span> (“init-ill”&#47;<span class="stli">initial illuminated</span>; “init-flour”&#47;<span class="stli">initial pen-flourished</span>; “init-high”&#47;<span class="stli">initial highlighted</span>)</div>
+</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_3.html');" >plus de détails</a></div>
+</div>
+
+
+
+
+<div class="mgb30">
+<div class="tit2">4. Structures sémantiques du <span class="stli">Texte</span></div>
+
+<div class="mgl30">
+<div><span class="cod1">&lt;w&gt;</span>  <span class="cod2">@xml:id</span></div>
+<div><span class="cod1">&lt;span&gt;</span>  <span class="cod2">@type</span> (“direct speech”, “monologue”)  <span class="cod2">@from</span>  <span class="cod2">@to</span></div>
+</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_4.html');" >plus de détails</a></div>
+</div>
+
+
+
+
+<div class="mgb30">
+<div class="tit2">5. Structure physique de l’<span class="stli">Écriture</span> ou Mise en texte</div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5"> 5.1. Mots Originaux du Manuscrit</div>
+<div><span class="cod1"> &lt;w&gt;</span>  <span class="cod2">@xml:id</span></div>
+</div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5">5.2. Ponctuation Originale du Manuscrit</div>
+<div><span class="cod1">&lt;pc&gt;</span>  <span class="cod2">@resp</span> (“1hd”&#47;<span class="stli">first hand</span>, “2hd”&#47;<span class="stli">second hand</span> etc.)  <span class="cod2">@type</span> (“punctus”, “diastole” etc.)</div>
+</div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5">5.3. Séquences Graphiques</div>
+<div><span class="cod1">&lt;w&gt;</span>  <span class="cod2">@ana</span> (“elis”&#47;<span class="stli">elision</span>, “encl”&#47;<span class="stli">enclisis</span>, “aggl-s”&#47;<span class="stli">simple agglutination</span>, “aggl-c”&#47;<span class="stli">complex agglutination</span>, “aggl-s-unc”&#47;<span class="stli">uncertain</span>, “degl”&#47;<span class="stli">deglutination</span>)</div>
+<div><span class="cod1">&lt;space&#47;&gt;</span>  <span class="cod2">@type</span> (“degl”&#47;<span class="stli">deglutination</span>)</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_5.html');" >plus de détails</a></div>
+</div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5">5.4. Abréviations</div>
+<div><span class="cod1">&lt;expan&gt;</span>  <span class="cod2">@corresp</span> (<span class="stli">renvoi au glyphe abréviatif</span>)</div>
+<div><span class="cod1">&lt;ex&gt;</span></div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_6.html');">plus de détails</a></div>
+</div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5">5.5. Interventions de Correction du Copiste (ou des Successeurs)</div>
+<div><span class="cod1">&lt;subst&gt;</span>  <span class="cod2">@hand</span></div>
+<div><span class="cod1">&lt;del&gt;</span>  <span class="cod2">@rend</span> (“exp”&#47;<span class="stli">expunged</span>, “eras”&#47;<span class="stli">erased</span>, “cross”&#47;<span class="stli">crossed through</span>, “transf”&#47;<span class="stli">transformed</span>)  <span class="cod2">@hand</span></div>
+<div><span class="cod1">&lt;add&gt;</span>  <span class="cod2">@place</span> (“inl”&#47;<span class="stli">inline</span>, “interl”&#47;<span class="stli">interlinear</span>, “marg”&#47;<span class="stli">added int the margin</span>, “sup”&#47;<span class="stli">superimposed</span>)  <span class="cod2">@hand</span></div>
+<div><span class="cod1">&lt;app &gt;</span>  <span class="cod2">@resp</span> (“1hd”, “2hd” etc.)</div>
+<div><span class="cod1">&lt;rdg&gt;</span>  <span class="cod2">@varSeq</span> (“1”, “2”, “3”)</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_7.html');">plus de détails</a></div>
+</div>
+<div class="mgl30">
+<div class="tit3 mgb5">5.6. Péritexte</div>
+<div><span class="cod1">&lt;note&gt;</span>  <span class="cod2">@type</span> (“note-per”&#47;<span class="stli">note péritextuelle</span>)</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_8.html');">plus de détails</a></div>
+</div>
+</div>
+
+
+
+
+
+<div class="mgb30">
+<div class="tit2">6. Interventions éditoriales (1): Modernisation graphique du texte</div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 magb5">6.1. Ponctuation</div>
+<div><span class="cod1">&lt;pc&gt;</span>  <span class="cod2">@resp</span> (“ed”)</div>
+</div>
+
+<div class="mgb30 mgl30">
+<div class="tit3 mgb5">6.2 Signes Diacritiques</div>
+<div><span class="cod1">&lt;c&gt;</span>  <span class="cod2">@ana</span> (“e-ton”&#47;<span class="stli">-e tonique</span>; “hiat”&#47;<span class="stli">élément de hiatus</span>, “affr”&#47;<span class="stli">affriquée</span>, “ced-dipl”&#47;<span class="stli">cédille diplomatique</span>, “diacr-desamb”&#47;<span class="stli">diacritique désambiguïsant</span>)</div>
+</div>
+<div class="mgl30">
+<div class="tit3 mgb5">6.3 Lettres Ramistes</div>
+<div><span class="cod1">&lt;c&gt;</span>  <span class="cod2">@ana</span> (“lram-v”&#47;<span class="stli">valeur vocalique</span>, “lram-c”&#47;<span class="stli">valeur consonantique</span>)</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_9.html');">plus de détails</a></div>
+</div>
+</div>
+
+
+
+
+
+<div class="mgb30">
+<div class="tit2">7. Interventions éditoriales (2): critique textuelle</div>
+
+<div class="mgl30">
+<div><span class="cod1">&lt;sic&gt;</span>  <span class="cod2">@ana</span> (“ditt”&#47;<span class="stli">dittography</span>, “hapl”&#47;<span class="stli">haplography</span>, “inver”&#47;<span class="stli">inversion</span>, “metath”&#47;<span class="stli">metathesis</span>, “misdiv”&#47;<span class="stli">misdivision</span>, “eye”&#47;<span class="stli">eye-skip</span>)</div>
+<div><span class="cod1">&lt;corr&gt;</span></div>
+<div><span class="cod1">&lt;supplied&gt;</span>  <span class="cod2">@reason</span> (“evident-omission”, “damage”)  <span class="cod2">@cert</span> (“yes”, “non”)</div>
+<div><span class="cod1">&lt;note&gt;   &lt;ptr&#47;&gt;</span>  <span class="cod2">@xml:id</span> (&lt;ptr&#47;&gt;)  <span class="cod2">@type</span> (“diplomatique”, “interpretative”)</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_10.html');">plus de détails</a></div>
+</div>
+</div>
+
+
+
+
+
+<div class="mgb30">
+<div class="tit2">8. Entités nommées</div>
+
+<div class="mgl30">
+<div><span class="cod1">&lt;persName&gt;</span> <span class="cod2">@ref</span>  [<span class="cod1">&lt;forename&gt;</span>, <span class="cod1">&lt;roleName&gt;</span>, <span class="cod1">&lt;addName&gt;</span> etc.]</div>
+<div><span class="cod1">&lt;placeName&gt;</span>  <span class="cod2">@ref</span>  <span class="cod2">@type</span> (“region&#47;reign”, “city”, “castle”, etc.)</div>
+<div><span class="cod1">&lt;geogName&gt;</span>  <span class="cod2">@ref</span>  <span class="cod2">@type</span> (“river”, “forest”, “valley”, etc.)</div>
+<div><span class="cod1">&lt;num&gt;</span></div>
+<div><span class="cod1">&lt;rs&gt;</span>  <span class="cod2">@type</span> (“allegory”, “nationality”)</div>
+<div class="cnt mgt10"><a class="ms" href="javascript:open_pag('pag/pag1_3_4_11.html');">plus de détails</a></div>
+</div>
+ </div>
+
+
+
+
+
+</div>
+<!--
+</body>
+</html>
+-->
