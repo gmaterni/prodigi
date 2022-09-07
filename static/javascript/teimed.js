@@ -725,9 +725,20 @@ var TeimedCss = {
             }
         }
     },
+    // diplomatica rimuove tuttle le broken
+    //intrpretativa rimuove quelle che NON sono interruzioni di w
     wordbroken: function (ref) {
-        const eps_dip_int = document.querySelectorAll("div.div_text");
-        for (const eps of eps_dip_int) {
+        const pannel_dip = document.querySelector("#pannel_dip_id");
+        const eps_dip = pannel_dip.querySelectorAll("div.div_text");
+        for (const eps of eps_dip) {
+            const brokens = eps.querySelectorAll("span.broken");
+            for (const brk of brokens) {
+                brk.remove();
+            }
+        }
+        const pannel_int = document.querySelector("#pannel_dip_id");
+        const eps_int = pannel_int.querySelectorAll("div.div_text");
+        for (const eps of eps_int) {
             const brokens = eps.querySelectorAll("span.broken");
             for (const brk of brokens) {
                 if (!brk.closest("div.w"))
