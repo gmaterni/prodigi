@@ -746,17 +746,19 @@ var TeimedCss = {
             }
         }
     },
-    // "sic" isolato NON all'interno di na choice
+    // "sic" isolato NON all'interno di una choice
     // e affiancato a "corr" 
     sic_no_choice: function (ref) {
         const sic_arr = document.querySelectorAll("span.sic_int");
         for (const sic of sic_arr) {
-            const next = sic.nextSibling;
             const prev = sic.previousSibling;
-            const next_corr = !next ? false : next.classList.contains("corr_int");
-            const prev_corr = !prev ? false : prev.classList.contains("corr_int");
-            if (!next_corr && !prev_corr)
+            const next = sic.nextSibling;
+            const prev_corr = !prev || !prev.classList ? false : prev.classList.contains("corr_int");
+            const next_corr = !next || !next.classList ? false : next.classList.contains("corr_int");
+            if (!next_corr && !prev_corr) {
+                // console.log(sic);
                 sic.classList.replace("sic_int", "sic_u");
+            }
         }
     }
 
