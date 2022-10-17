@@ -28,15 +28,6 @@ var TextInfoLst = {
         'dip_id': '#oxf_dip_id',
         'int_id': '#oxf_int_id'
     }
-    // "ven": {
-    //     'css_init': true,
-    //     'url': "html/ven/syn/ven.html",
-    //     'urleps': "html/ven/syn/_EPS_.html",
-    //     'name': 'V (venezia)',
-    //     'sigla': 'V',
-    //     'dip_id': '#ven_dip_id',
-    //     'int_id': '#ven_int_id'
-    // }
 };
 
 var initSync = function () {
@@ -233,43 +224,14 @@ var EpsMgr = {
         }
     },
     getEpsElem: function (text_id, eps_num) {
-        // let ref = this.ref_lst[eps_num];
-        // let es = $(text_id).find("div.div_text").toArray();
-        // let elm = null;
-        // for (let i = 0; i < es.length; i++) {
-        //     if (ref == $(es[i]).attr('ref')) {
-        //         elm = es[i];
-        //         break;
-        //     }
-        // }
         console.log("getEpsElem()", text_id, eps_num);
         const pannel = document.querySelector(text_id);
         const div_arr = pannel.querySelectorAll("div.div_text");
         const elm = div_arr[eps_num];
         return elm;
     },
-    // "gre": {
-    //     'css_init': true,
-    //     'url': "html/gre/syn/gre.html",
-    //     'urleps': "html/gre/syn/_EPS_.html",
-    //     'name': 'Grenoble',
-    //     'sigla': 'G',
-    //     'dip_id': '#gre_dip_id',
-    //     'int_id': '#gre_int_id'
-    // },
-
     getUrl: function (cod, eps_num) {
-        // const ref = this.ref_lst[eps_num];
-        // let rf = ref.replace('#', '');
-        // let info = TextInfoLst[cod];
-        // let url = info.urleps.replace('_EPS_', rf);
-
         const info = TextInfoLst[cod];
-        // 'dip_id': '#gre_dip_id',
-        //<div id="gre_dip_id" class="text_pannel tei_dip">
-        //  <div class="div_text" type="episode" ref="#tr_gre_000"></div>
-        //  <div class="div_text" type="episode" ref="#tr_gre_001"></div>
-        //</div>
         const pannel = document.querySelector(info.dip_id);
         const div_arr = pannel.querySelectorAll("div.div_text");
         const div = div_arr[eps_num];
@@ -281,13 +243,6 @@ var EpsMgr = {
     },
     removeText: function (cod) {
         console.log("removeText()", cod);
-        // let text_info = TextInfoLst[cod];
-        // let eds = $(text_info.dip_id).find("div.div_text").toArray();
-        // let eis = $(text_info.int_id).find("div.div_text").toArray();
-        // for (let i = 0; i < eds.length; i++) {
-        //     $(eds[i]).empty();
-        //     $(eis[i]).empty();
-        // }
         let text_info = TextInfoLst[cod];
         let pannel = document.querySelector(text_info.dip_id);
         let div_arr = pannel.querySelectorAll("div.div_text");
@@ -439,16 +394,13 @@ var UaFl = {
                     $("#eps_id").html(text);
                     let es = $("#eps_id").find('div.div_text').toArray();
                     let hd = es[0].innerHTML;
-                    // es[0].innerHTML = "";
                     let hi = es[1].innerHTML;
-                    // es[1].innerHTML = "";
                     document.querySelector("#eps_id").innerHTML = "";
                     let text_info = TextInfoLst[cod];
                     let ed = EpsMgr.getEpsElem(text_info.dip_id, eps_num);
                     let ei = EpsMgr.getEpsElem(text_info.int_id, eps_num);
                     $(ed).html(hd);
                     $(ei).html(hi);
-
                     if (UaFl.dip_int == 'd') {
                         $(text_info.int_id).hide();
                         $(text_info.dip_id).show();
@@ -459,11 +411,12 @@ var UaFl = {
                     TeimedCss.init(cod);
                     UaWait.hide();
                 } catch (err) {
-                    throw new Error("response.text\n" + err);
+                     throw new Error(err);
                 }
             })
             .catch((error) => {
                 alert(`ERROR \nladShowEpisode() \n${url}\n${error}`);
+                UaWait.hide();
             });
     },
     // legge l'episodio di un testo
@@ -472,7 +425,7 @@ var UaFl = {
         TextMgr.assignClasses();
         this.loadShowEpisode(text_cod, eps_num);
     },
-    // legge episodio in tutt i testi attivi
+    // legge episodio in tutti i testi attivi
     loadActiveEps: function (eps_num) {
         console.log("loadActiveEps()", eps_num);
         if (this.eps_num == eps_num)
@@ -636,10 +589,12 @@ var UaBarVert = {
     init: function (es) {
         this.eps_list = [];
         for (let i = 0; i < es.length; i++) {
+            let episode = $(es[i]).attr('episode');
             let type = $(es[i]).attr('type');
             let ref = $(es[i]).attr('ref');
             let item = {
                 'i': i,
+                'episode': episode,
                 'type': type,
                 'ref': ref.replace('#', ''),
                 'class': 'x'
@@ -672,7 +627,11 @@ var UaBarVert = {
     },
     htmlEpsList: function (n) {
         this.eps_list[n].class = 'used';
-        let template = '<li><a class="{class}" href="javascript:UaBarVert.showEpsNum({i})">{ref}</a></li>';
+        let template = `
+        <li>
+        <a class="{class}" href="javascript:UaBarVert.showEpsNum({i})">{episode}</a>
+        </li>
+        `;
         let jt = UaJt();
         jt.append("<div><ul>");
         jt.appendList(template, this.eps_list);
