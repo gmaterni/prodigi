@@ -235,7 +235,7 @@ var UaFl = {
             //window.requestAnimationFrame(function() {ref.on("scroll", callback); }, 100);
         });
     },
-    //AAA onSelectLine: function () { probabilmente inutile
+    //TODO onSelectLine: function () { probabilmente inutile
     onSelectLine: function () {
         let line_enter = function (e) {
             let elm = $(e.currentTarget);
@@ -725,9 +725,8 @@ var TeimedCss = {
             }
         }
     },
-    // diplomatica rimuove tuttle le broken
-    //intrpretativa rimuove quelle che NON sono interruzioni di w
     wordbroken: function (ref) {
+        // diplomatica rimuove tuttle le broken
         const pannel_dip = document.querySelector("#pannel_dip_id");
         const eps_dip = pannel_dip.querySelectorAll("div.div_text");
         for (const eps of eps_dip) {
@@ -736,7 +735,9 @@ var TeimedCss = {
                 brk.remove();
             }
         }
-        const pannel_int = document.querySelector("#pannel_dip_id");
+        // intrpretativa rimuove quelle che NON sono interruzioni di w
+        //AAA const pannel_int = document.querySelector("#pannel_dip_id");
+        const pannel_int = document.querySelector("#pannel_int_id");
         const eps_int = pannel_int.querySelectorAll("div.div_text");
         for (const eps of eps_int) {
             const brokens = eps.querySelectorAll("span.broken");
@@ -861,7 +862,7 @@ var UaBarVert = {
 
                     TeimedCss.setTeimCss();
                     UaFl.onSelectNote();
-                    //AAA UaFl.onSelectLine(); 
+                    //TODO UaFl.onSelectLine(); 
                     UaFl.syncPannelScroll();
                     UaFl.setEpsNum(eps_num, ep_d, ep_i);
                     UaBarVert.pagList(eps_num);
