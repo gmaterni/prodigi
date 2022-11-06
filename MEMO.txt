@@ -41,6 +41,9 @@ XssrE
 1. gli head ( &hdB;) vanno numerati e il numero deve essere 
 visualizzato fra parentesi quadre sopra l'head, vedi come è 
 fatto in Florimont il numero del <lg>
+FATTO
+   modificata produzione xml
+  da fare css
 
 ---------------------------
 2. il contenuto di <w type="number-digit"> che deriva da &num-d;
