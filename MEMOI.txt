@@ -1,0 +1,47 @@
+
+sic 
+iplomatica
+  sempre (sic) attaccato a sinistra
+interpretativa
+  se isolato (sic) attaccato a sinistra
+  se in choice NON compare
+ ------------------------- 
+diplomatica hi-s grasseto ???
+----------------------------
+interpretativa 
+lb spezza parola mettere -
+------------------------------------------------------
+prolep1
+ep2
+....
+==========================================================
+XXX 03/11/22
+
+Da sostituire ep. 001 con questo file.
+è stato introdotto un nuovo tag, devi usare 
+questo di file di configurazione.
+
+
+è rimasto da fare:
+
+1. gli head ( &hdB;) vanno numerati e il numero deve essere 
+visualizzato fra parentesi quadre sopra l'head, vedi come è 
+fatto in Florimont il numero del <lg>
+
+2. il contenuto di <w type="number-digit"> che deriva da &num-d;
+diplomatica: così come è scritto
+interpretativa: maiuscoletto
+
+3. il contenuto di <corr type="expunction" resp="#ed">$</corr> 
+che deriva da &corr-exp;
+diplomatica: il contenuto va messo fra parentesi quadra [§]
+interpretqtiva: il contenuto non deve comparire e al suo 
+posto un asterisco che apre un pop up con il contenuto 
+messo fra parentesi quadra
+
+4. i + usati quando c'è il damage, andrebbero in rosso se 
+no non si vedono nel testo
+
+
+
+
