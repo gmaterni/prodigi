@@ -121,7 +121,7 @@
 // }
 
 
-// UA nuove 
+// AAA nuove 
 
 .directspeech_spy {
     background: @direct-back  !important;
@@ -165,7 +165,9 @@ div.monologue_last_int::after {
     font-weight: bold !important;
 }
 
+//UUU damage modificato colore
 .damage_low_first::before {
+    color: red;
     content: " +";
 }
 
@@ -175,10 +177,12 @@ div.damage_low {
 
 .damage_low_last::after {
     content: "+ ";
+    color: red;
 }
 
 .damage_medium_first::before {
     content: " ++";
+    color: red;
 }
 
 div.damage_medium {
@@ -187,16 +191,19 @@ div.damage_medium {
 
 .damage_medium_last::after {
     content: "++ " !important;
+    color: red;
 }
 
 .damage_high_first::before {
     content: " +++";
+    color: red;
 }
 
 div.damage_high {}
 
 .damage_high_last::after {
     content: "+++ " !important;
+    color: red;
 }
 
 .no_display {
@@ -215,8 +222,6 @@ span.broken {
 ///////////////////////
 
 @fserif: "Ties New Roman", Georgia, serif;
-//AAA @fserif: "Ties New Roman", serif, helvetica, arial, verdana;
-// @fsans: arial, verdana, Helvetica, sans-serif;
 
 body {
     font-family: @fserif;
@@ -567,7 +572,7 @@ div.text_pannel {
         }
     }
 
-    //UA div.div_text
+
     div.div_text {
         max-width: @text-width;
         min-width: @text-width;
@@ -637,7 +642,7 @@ div.text_pannel {
             color: lighten(@bar, 30%);
         }
 
-        //UA div.p
+
         div.p {
             // position: relative;
             display: block;
@@ -683,7 +688,8 @@ div.text_pannel {
             }
 
             div.number-digit_int {
-                text-transform: uppercase;
+                // UUU text-transform: uppercase;
+                text-transform: small-caps;
             }
 
             span.reserved_line {
@@ -801,12 +807,10 @@ div.text_pannel {
 
             span.hi_sec {
                 font-weight: bold;
-                //AAA
                 font-size: @pb-font-size;
             }
 
-            span.hi_sec_int {
-            }
+            span.hi_sec_int {}
 
             /* Ponctuation original du manuscrit */
             span.pc_1hd {
@@ -1287,8 +1291,7 @@ div.text_pannel {
             }
 
             /* sic isolato fuori da choice */
-            span.sic_u {
-            }
+            span.sic_u {}
 
             span.sic_u::after {
                 content: "(sic!) ";
