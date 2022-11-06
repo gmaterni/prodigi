@@ -642,9 +642,7 @@ div.text_pannel {
             color: lighten(@bar, 30%);
         }
 
-
         div.p {
-            // position: relative;
             display: block;
             height: auto;
             left: 0;
@@ -1033,7 +1031,6 @@ div.text_pannel {
                 font-size: @del-font-size;
             }
 
-            /**/
             span.delexp {
                 font-size: @del-font-size;
                 border-bottom: 1px dotted @black;
@@ -1044,13 +1041,11 @@ div.text_pannel {
             span.delexp::before {
                 content: "[";
                 font-size: @del-font-size;
-                ;
             }
 
             span.delexp::after {
                 content: "]";
                 font-size: @del-font-size;
-                ;
             }
 
             span.del_intexp {
@@ -1082,7 +1077,6 @@ div.text_pannel {
                 display: none;
             }
 
-            /**/
             span.deleras {
                 font-size: @del-font-size;
                 background: @del-back;
@@ -1124,7 +1118,6 @@ div.text_pannel {
                 display: none;
             }
 
-            /**/
             span.delcross {
                 font-size: @del-font-size;
                 text-decoration: line-through;
@@ -1178,6 +1171,7 @@ div.text_pannel {
             }
 
             span.deltransf2hd {
+                //FIXME scelta color
                 font-size: @del-font-size;
                 color: @red;
                 background: @del-back;
@@ -1211,7 +1205,7 @@ div.text_pannel {
                 font-size: @add-font-size;
             }
 
-            // /prova\
+            // AAA prova addinl
             span.addinl {
                 margin-right: 0;
                 color: @add-color;
@@ -1302,8 +1296,6 @@ div.text_pannel {
                 margin-left: -4px;
             }
 
-
-
             /* chiuce*/
             span.sic {}
 
@@ -1320,12 +1312,25 @@ div.text_pannel {
                 display: none;
             }
 
+            //UUU corr in diplomatica
             span.corr {
-                display: none;
+                // display: none;
+                .w::before {
+                    content: "[";
+                }
+                .w::after {
+                    content: "]";
+                }
             }
 
+            //UUU gestione corr in interpretativa
             span.corr_int {
                 position: relative;
+
+                .w {
+                    font-size: 0;
+                    // color:white;
+                }
 
                 .w::after {
                     content: "*";

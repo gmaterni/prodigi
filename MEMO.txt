@@ -28,21 +28,31 @@ questo di file di configurazione.
 1. gli head ( &hdB;) vanno numerati e il numero deve essere 
 visualizzato fra parentesi quadre sopra l'head, vedi come è 
 fatto in Florimont il numero del <lg>
-
-FATTO 2. il contenuto di <w type="number-digit"> che deriva da &num-d;
+---------------------------
+2. il contenuto di <w type="number-digit"> che deriva da &num-d;
 diplomatica: così come è scritto
 interpretativa: maiuscoletto
-
+FATTO  
+----------------------
 3. il contenuto di <corr type="expunction" resp="#ed">$</corr> 
 che deriva da &corr-exp;
-diplomatica: il contenuto va messo fra parentesi quadra [§]
+.........
+diplomatica: il contenuto va messo fra parentesi quadra [§] 
+FATTO
+Non + pià invisibile
+.........
 interprettiva: il contenuto non deve comparire e al suo 
 posto un asterisco che apre un pop up con il contenuto 
 messo fra parentesi quadra
-
+FATTO 
+  modifiato  html.csv
+  i|corr|span||class:corr_int,tooltip:[ms. %w@text%]
+  da scegliere se in modalità trasparente o eliminato il testo (problemi riga)
+------------
 4. i + usati quando c'è il damage, andrebbero in rosso se 
 no non si vedono nel testo
-
+FATTO
+------------------
 
 
 
