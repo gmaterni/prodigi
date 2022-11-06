@@ -1,0 +1,14 @@
+&- invece di &-
+-----------
+&. non si puo usare
+sostituito  con 
+&X
+---------
+trovato &.
+sostituito con
+&X
+---------
+aggiunti 
+XssrsEB
+XssrE
+-----------
