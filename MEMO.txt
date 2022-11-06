@@ -42,8 +42,11 @@ XssrE
 visualizzato fra parentesi quadre sopra l'head, vedi come è 
 fatto in Florimont il numero del <lg>
 FATTO
-   modificata produzione xml
-  da fare css
+  aggiunto in html.csv
+  x|head|div|id,n|class:p head|<span class="headnum">[%n%]</span>
+  
+  modificato css
+  modificata numerazione settabile anche per head
 
 ---------------------------
 2. il contenuto di <w type="number-digit"> che deriva da &num-d;

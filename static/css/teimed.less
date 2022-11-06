@@ -636,8 +636,20 @@ div.text_pannel {
 
         }
 
+        //UUU gestionr numerazione head
         div.head {
             color: lighten(@bar, 30%);
+            display: block;
+            position: relative;
+            left:0;
+            span.headnum {
+                display: inline-block;
+                font-size: @lg-font-size;
+                background: inherit;
+                color: lighten(@bar, 30%);
+                // color:@lgnum-color;
+                margin-left: 5px;
+            }
         }
 
         div.p {
