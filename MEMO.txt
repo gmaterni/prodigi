@@ -57,14 +57,20 @@ FATTO
 ----------------------
 3. il contenuto di <corr type="expunction" resp="#ed">$</corr> 
 che deriva da &corr-exp;
+!!!!!!!!!!!
+[$] => <$> {$}
+vincolante che vi siano ambedue type e resp con questi valori
+vale sia per la diplomatica che l'iterpretativa
+
 .........
+
 diplomatica: il contenuto va messo fra parentesi quadra [§] 
 FATTO
 Non + pià invisibile
 .........
 interprettiva: il contenuto non deve comparire e al suo 
 posto un asterisco che apre un pop up con il contenuto 
-messo fra parentesi quadra
+messo fra parentesi quadra GRAFFA o <>
 FATTO 
   modifiato  html.csv
   i|corr|span||class:corr_int,tooltip:[ms. %w@text%]
