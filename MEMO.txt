@@ -81,6 +81,20 @@ FATTO
 no non si vedono nel testo
 FATTO
 ------------------
+========================================
+23-01-03
 
+sic                 dipl.             interp.
+                     ok                  ok
+choice
+sic               contenuto(!sic)       no
+
+
+corr              [contenuto]         * => 
+expunction                           popup[contenuto]
+
+choice
+corr                 no              contenuto => 
+                                 popup(ms. contenuto sic)
 
 

@@ -269,7 +269,7 @@ var UaFl = {
         $("span.lnum").toggleClass("teimed_hidden");
     },
 
-    //HACK toggleSelectLine: function () {
+    //TODOtoggleSelectLine: function () {
     toggleSelectLine: function () {
         alert("toggleSelectLine");
         if (this.line_select == false) {
@@ -641,6 +641,7 @@ var UaFl = {
     }
 };
 
+//TODO TeimedCss
 var TeimedCss = {
     setTeimCss: function () {
         try {
@@ -735,8 +736,8 @@ var TeimedCss = {
                 brk.remove();
             }
         }
-        // intrpretativa rimuove quelle che NON sono interruzioni di w
-        //AAA const pannel_int = document.querySelector("#pannel_dip_id");
+        // XXX intrpretativa rimuove quelle che NON sono interruzioni di w
+        // const pannel_int = document.querySelector("#pannel_dip_id");
         const pannel_int = document.querySelector("#pannel_int_id");
         const eps_int = pannel_int.querySelectorAll("div.div_text");
         for (const eps of eps_int) {
@@ -747,8 +748,7 @@ var TeimedCss = {
             }
         }
     },
-    // "sic" isolato NON all'interno di una choice
-    // e affiancato a "corr" 
+    // AAA "sic" isolato NON all'interno di una choice dove è affiancato a "corr" 
     sic_no_choice: function (ref) {
         const sic_arr = document.querySelectorAll("span.sic_int");
         for (const sic of sic_arr) {
@@ -757,7 +757,6 @@ var TeimedCss = {
             const prev_corr = !prev || !prev.classList ? false : prev.classList.contains("corr_int");
             const next_corr = !next || !next.classList ? false : next.classList.contains("corr_int");
             if (!next_corr && !prev_corr) {
-                // console.log(sic);
                 sic.classList.replace("sic_int", "sic_u");
             }
         }
@@ -916,7 +915,7 @@ var UaBarVert = {
     },
     htmlEpsList: function (n) {
         this.eps_list[n].class = 'used';
-        //AAA const template = '<li><a class="{class}" href="javascript:UaBarVert.showEpsNum({i})">{ref}</a></li>';
+        //XXX const template = '<li><a class="{class}" href="javascript:UaBarVert.showEpsNum({i})">{ref}</a></li>';
         const template = '<li><a class="{class}" href="javascript:UaBarVert.showEpsNum({i})">{episode}</a></li>';
         let jt = UaJt();
         jt.append("<div><ul>");
